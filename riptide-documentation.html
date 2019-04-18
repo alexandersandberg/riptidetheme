@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Riptide Theme Documentation</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,700,600,800' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="http://33.media.tumblr.com/avatar_5d0ff478eab5_128.png">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <style>
+        /* Resets */
+        html {
+            font: 400 125%/1.5 'Open Sans', sans-serif;
+            height: 100%;
+            word-break: break-all;
+            word-break: break-word;
+        }
+        html, input, button {
+            text-rendering: optimizeLegibility;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            margin: 0;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+        img {
+        	border: 0;
+        	height: auto;
+        	max-width: 100%;
+        }
+        img, iframe {
+        	display: block;
+        }
+        blockquote {
+            margin: 1.125rem 0 1.125rem 2rem;
+            padding-left: 0.875rem;
+        }
+        a {
+        	background: 0 0;
+        	color: inherit;
+        	text-decoration: none;
+        }
+        a:active, a:hover {
+        	outline: 0;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        *::-moz-selection, .selected {
+            background-color: #78c9a1;
+            color: #fff;
+        }
+        *::selection, .selected {
+            background-color: #78c9a1;
+            color: #fff;
+        }
+        /* Styles */
+        @media all and (max-width: 480px) {
+            html {
+                font-size: 112.5% !important;
+            }
+        }
+        body {
+            background-color: #f5f5f5;
+            text-align: center;
+            color: #888;
+        }
+        h1, h2, h3, h4 {
+            margin: 0;
+            color: #3d3d3d;
+            line-height: 2;
+        }
+        h1 {
+            margin-top: 1rem;
+            font-size: 1.75rem;
+        }
+        h2 {
+            font-size: 1.35rem;
+        }
+        h3 {
+            font-size: 1.17rem;
+            margin-left:;
+        }
+        h4 {
+            font-size: 0.875rem;
+            opacity: .6;
+            text-transform: uppercase;
+        }
+        h5 {
+            font-size: 0.8125rem;
+            color: #78c9a1;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .page-wrapper {
+            max-width: 29rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .bottom {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5rem;
+        }
+        .back-to-blog {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #78c9a1;
+            margin: 20px 0 20px 0;
+            color: #fff;
+            font-size: 0.8125rem;
+            border-radius: 5px;
+            font-weight: 100;
+            border-bottom: 3px solid rgba(0,0,0,.075);
+            -webkit-transition: opacity .2s;
+            -moz-transition: opacity .2s;
+            -o-transition: opacity .2s;
+            transition: opacity .2s;
+        }
+        .back-to-blog:hover {
+            opacity: .7;
+        }
+        a .fa-angle-left {
+            margin-right: 0.5rem;
+        }
+        .part {
+            margin: 5rem 0;
+            overflow: hidden;
+        }
+        .half {
+            width: 50%;
+            float: left;
+            font-size: 90%;
+        }
+        .half.left {
+            text-align: right;
+        }
+        .half.left {
+            padding-right: 10px;
+        }
+        .half.right {
+            text-align: left;
+        }
+        .half.right {
+            padding-left: 10px;
+        }
+        .contents a {
+            color: #666;
+            font-size: 0.875rem;
+        }
+        .contents a:hover {
+            border-bottom: 1px solid #bbb;
+        }
+        .sub, .sub a {
+            color: #999 !important;
+            font-size: 0.75rem !important;
+        }
+        .text-note {
+            font-size: 0.75rem;
+            color: #999;
+        }
+        p a, #cookie {
+            cursor: pointer;
+            color: #78c9a1;
+        }
+        .option-link {
+            color: #888;
+            border-bottom: 1px dotted #78c9a1;
+        }
+        .options h5 {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .active {
+            cursor: pointer;
+        }
+        .active:hover:after {
+            content: "\f059";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            margin-left: 10px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            line-height: inherit;
+        }
+        .description {
+            font-size: 0.8125rem;
+            margin-top: 0;
+        }
+        .default {
+            margin-top: 0.5rem;
+            display: block;
+        }
+        .social-icons {
+            margin: 2rem 0;
+            font-size: 1.15rem;
+        }
+        .up-top {
+            line-height: 2;
+            margin-left: 1rem;
+        }
+        #yum {
+            border: 0.5rem solid #fff;
+            border-radius: 2px;
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, .15);
+        }
+        .cookie-box {
+            display: none;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .classy {
+            -webkit-transition: opacity .2s;
+            -moz-transition: opacity .2s;
+            -o-transition: opacity .2s;
+            transition: opacity .2s;
+            opacity: 0;
+            margin-top: 10rem;
+            padding-bottom: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="intro part bottom">
+            <h1>Riptide 1.0</h1>
+            <p>Hello and welcome to the Documentation page!</p>
+            <p>Here you can find everything you need to know about Riptide, and a little more.</p>
+            <a class="back-to-blog" href="http://riptidetheme.tumblr.com"><i class="fa fa-angle-left"></i>Back to the theme demo</a>
+        </div>
+        <div class="contents part bottom">
+            <h3 id="contents">Documentation Contents</h3>
+            <p>
+            <a href="#features">Features</a><br/>
+            <a href="#support">Support</a><br/>
+            <a href="#installation">Theme Installation</a><br/>
+            <a href="#options">Options</a><br/>
+            <span class="sub"><a href="#colors">Colors</a> &#183;
+            <a href="#selections">Selections</a> &#183;
+            <a href="#toggles">Toggles</a> &#183;
+            <a href="#text">Text</a></span><br/>
+            <a href="#feeds">Setting up Social Feeds</a><br/>
+            <a href="#tldr">TLDR - For you lazy people</a><br/>
+            <a href="#change-log">Change Log</a><br/>
+            <a href="#credits">Credits</a><br/>
+            <a href="#last-words">A few last words</a></p>
+        </div>
+        <div class="part">
+        <h3 id="features">Features<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>With <em>all post types</em> and <em>every Tumblr feature</em> supported, Riptide is a theme for everyone!</p>
+            <h4>Responsive Design</h4>
+            <p>Riptide is adapted to suit <span class="text-note">(almost)</span> every possible device out there. Your blog will look equally beautiful, wherever you may be - at home, or at sea.</p>
+            <h4>Multi-Column</h4>
+            <p>Choose the maximum amount of columns for your blog posts in theme options, and they will automatically adapt as the browser window gets smaller.</p>
+            <p>Riptide uses the popular <a href="http://masonry.desandro.com/" target="_blank">Masonry</a> plugin to line your posts up in a perfectly tiled grid.</p>
+            <h4>Theme Options</h4>
+            <p>Customize your theme in your own liking with over <em>100 different</em> Theme Options!</p>
+            <h4>Retina Ready</h4>
+            <p>With help of the wonderful&nbsp;<a href="http://fortawesome.github.io/Font-Awesome/" title="Font Awesome" target="_blank">Font Awesome</a>&nbsp;project, all of the icons used in Riptide are&nbsp;<em>retina ready</em>!</p>
+            <p>Not only that.&nbsp;<em>Photos and portraits</em>&nbsp;are also optimized to look nice and crisp on your retina devices!</p>
+            <h4>Smart Sidebar</h4>
+            <p>With the custom made sidebar, only for Riptide, your columns will beautifully adapt to the new content width as the sidebar opens. This means <em>you can still browse through your posts</em>, even when the sidebar is opened.</p>
+            <p></p>
+            <h4>Social Feeds</h4>
+            <p>Display posts from other social media websites on your blog with the Social Feeds! Available for Twitter, Instagram, Dribbble and Flickr.</p>
+            <p>If you need help to set it up, take a look at the <a class="option-link" href="#feeds">tutorials</a> below.</p>
+            <h4>Social Icons</h4>
+            <p>Riptide ships with support for 40 social icons seen below. All you need is a link to paste into Theme Options, and the icon will <em>automatically</em> be added to the sidebar!</p>
+            <p class="social-icons"><i class="fa fa-behance social-icon"></i>
+            <i class="fa fa-codepen social-icon"></i>
+            <i class="fa fa-delicious social-icon"></i>
+            <i class="fa fa-deviantart social-icon"></i>
+            <i class="fa fa-digg social-icon"></i>
+            <i class="fa fa-dribbble social-icon"></i>
+            <i class="fa fa-dropbox social-icon"></i>
+            <i class="fa fa-drupal social-icon"></i>
+            <i class="fa fa-facebook social-icon"></i>
+            <i class="fa fa-flickr social-icon"></i>
+            <i class="fa fa-foursquare social-icon"></i>
+            <i class="fa fa-github social-icon"></i>
+            <i class="fa fa-google-plus social-icon"></i>
+            <i class="fa fa-instagram social-icon"></i>
+            <i class="fa fa-joomla social-icon"></i>
+            <i class="fa fa-jsfiddle social-icon"></i>
+            <i class="fa fa-lastfm social-icon"></i>
+            <i class="fa fa-linkedin social-icon"></i>
+            <i class="fa fa-paypal social-icon"></i>
+            <i class="fa fa-pinterest social-icon"></i>
+            <i class="fa fa-reddit social-icon"></i>
+            <i class="fa fa-skype social-icon"></i>
+            <i class="fa fa-soundcloud social-icon"></i>
+            <i class="fa fa-spotify social-icon"></i>
+            <i class="fa fa-stack-exchange social-icon"></i>
+            <i class="fa fa-stack-overflow social-icon"></i>
+            <i class="fa fa-steam social-icon"></i>
+            <i class="fa fa-stumbleupon social-icon"></i>
+            <i class="fa fa-tumblr social-icon"></i>
+            <i class="fa fa-twitch social-icon"></i>
+            <i class="fa fa-twitter social-icon"></i>
+            <i class="fa fa-vimeo-square social-icon"></i>
+            <i class="fa fa-vine social-icon"></i>
+            <i class="fa fa-weibo social-icon"></i>
+            <i class="fa fa-wordpress social-icon"></i>
+            <i class="fa fa-xing social-icon"></i>
+            <i class="fa fa-yahoo social-icon"></i>
+            <i class="fa fa-youtube social-icon"></i>
+            <i class="fa fa-globe social-icon"></i>
+            <i class="fa fa-paper-plane social-icon"></i></p>
+            <p>Oh, and are you missing an icon? Don't worry.&nbsp;<a href="http://riptidetheme.tumblr.com/support" title="Riptide support" target="_blank">Send me a message</a> and I'll be happy to help you set it up!</p>
+            <h4>Disqus Comments</h4>
+            <div class="disqus-comments"></div>
+            <p>Riptide supports commenting systems by Disqus on Permalink pages. There's also a Theme Option that allows you to enable Disqus for Custom pages.</p>
+            <h4>Permalink Pagination</h4>
+            <p>Browse your blog content easily with Permalink pagination. On Permalink pages, pagination arrows will be displayed in the header, waiting to take you to the next post!</p>
+            <h4>Other Features</h4>
+            <p>Group blogs, Day Pages, Tags and Tag pages, Localization, Search box, Like and Reblog buttons, Lightbox, High-res photos, Infinite Scroll, Google Analytics, Tool tips <em>& more</em>!
+        </div>
+        <div class="part">
+            <h3 id="support">Support<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>Riptide supports <strong>all</strong> post types.</p>
+            <p>Text, Photo, Photoset, Panorama, Quote, Link, Chat, Audio, Video, Ask, Submit</p>
+            <h4>Browser Support</h4>
+            <p>Chrome, Opera, Safari, Firefox, IE9+</p>
+        </div>
+        <div class="part">
+            <h3 id="installation">Theme Installation<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>To install Riptide, start by logging in to your <a href="https://www.tumblr.com/dashboard" target="_blank">Tumblr Dashboard</a>. Locate and click on the <em>Settings icon</em> in the top menu. Scroll down until you find the '<strong>Edit theme</strong>' button, next to <em>Website Theme</em>.</p>
+            <p>You can also reach the customize page with this link: <em>"https://www.tumblr.com/customize/YourBlogName"</em>.Make sure to replace YourBlogName with your <em>actual</em> blog name.</p>
+            <p>Click '<strong>Edit HTML</strong>' right below Custom theme.</p>
+            <p>Now it's time to grab your downloaded files from Theme Forest. Open the file named 'Riptide.html' in a text editor. <strong>Copy everything</strong> <span class="text-note">(CMD+A or CTRL+A to select everything, and CMD+C or CTRL+C to copy it)</span> and <strong>paste it</strong> <span class="text-note">(CMD+V or CTRL+V)</span> into the opened sidebar.<br/><span class="text-note">Make sure to <u>remove any already existing HTML code</u> before you replace it with your new theme code.</span></p>
+            <p>You're almost done! Now simply click <em>Update Preview</em> then <em>Save</em>, and Riptide is installed!</p>
+            <p>There's just a few more steps to make sure Riptide works properly.</p>
+            <p><strong>Go back</strong> to where you found the 'Edit HTML' link, scroll down to the very bottom of the page. You should see a button saying '<strong>Advanced options</strong>'.</p>
+            <p>After you've clicked the button, you'll see a few options. Make sure '<em>Use default mobile theme</em>' is turned <strong>OFF</strong>, otherwise Riptide will not work on mobile browsers.</p>
+            <p>Next, you should change the '<em>Posts per page</em>' option. If <a class="option-link" href="#infinite-scroll">Infinite Scroll</a> is enabled, I recommend setting it to '15'. If not, choose whatever you like!</p>
+            <p><em>Congratulations!</em> You have successfully set up your new theme. Now you just have to configure the <a class="option-link" href="#infinite-scroll">theme options</a>, located on the customize page, to make Riptide look the way you want.</p>
+            <p class="text-note">And as always, if you're having any problems with the theme, <a href="http://riptidetheme.tumblr.com/support">I promise I'll do my best to help you</a>.</p>
+        </div>
+        <div class="options part">
+            <h3 id="options">Options<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <span class="sub"><a href="#colors">Colors</a> &#183;
+            <a href="#selections">Selections</a> &#183;
+            <a href="#toggles">Toggles</a> &#183;
+            <a href="#text">Text</a><br/></span>
+            <p>Riptide offers many Theme Options to let you make your blog as personal as possible. Here's a complete <em>list</em> with all of them. If you prefer a <em>picture</em> instead, <a href="http://static.tumblr.com/j5v8xe6/uPWncimgr/riptide-options.png" target="_blank">your wish is my command</a>.</p>
+            <p class="text-note"><strong>Note</strong>: You can click on any Option if you want to know more about it.</p>
+            <h4 id="colors">Colors<a href="#options" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h4>
+            <h5 id="theme-color">Theme</h5>
+            <p class="description">The Theme color is what makes <em>your</em> theme special! Post titles, Links, Text selection, Read more/More notes button backgrounds, Post icon hover effects and more.<br/><span class="default text-note"><em>Default:</em> <span style="color:#78c9a1">#78c9a1</span></span></p>
+            <h5>Title</h5>
+            <p class="description">Blog title in header.<br/><span class="default text-note"><em>Default:</em> <span style="color:#3d3d3d">#3d3d3d</span></span></p>
+            <h5>Header Background</h5>
+            <p class="description">Fixed header background.<br/><span class="default text-note"><em>Default:</em> <span style="color:#bbb;background-color:#f5f5f5;border:1px solid #bbb;padding:2px 3px">#f5f5f5</span></span></p>
+            <h5>Text</h5>
+            <p class="description">Main body text on your blog.<br/><span class="default text-note"><em>Default:</em> <span style="color:#3d3d3d">#3d3d3d</span></span></p>
+            <h5>Secondary Text</h5>
+            <p class="description">Text with a colored background. Read more/More notes buttons, Post icon tooltip and Link post text.<br/><span class="default text-note"><em>Default:</em> <span style="color:#ffffff;background-color:#ddd;padding:2px 3px">#ffffff</span></span></p>
+            <h5>Background</h5>
+            <p class="description">Blog background.<br/><span class="default text-note"><em>Default:</em> <span style="color:#bbb;background-color:#f5f5f5;border:1px solid #bbb;padding:2px 3px">#f5f5f5</span></span></p>
+            <h5>Post Icon</h5>
+            <p class="description">Post icons shown with each post.<br/><span class="default text-note"><em>Default:</em> <span style="color:#78c9a1">#78c9a1</span></span></p>
+            <h5>Post Background</h5>
+            <p class="description">Each posts's background.<br/><span class="default text-note"><em>Default:</em> <span style="color:#bbb;background-color:#ffffff;border:1px solid #bbb;padding:2px 3px">#ffffff</span></span></p>
+            <h5>Sidebar Text</h5>
+            <p class="description">Sidebar body text.<br/><span class="default text-note"><em>Default:</em> <span style="color:#c4c4c4">#c4c4c4</span></span></p>
+            <h5>Sidebar Secondary Text</h5>
+            <p class="description">Sidebar titles, Social icon logos, Tag Cloud tags, Sidebar buttons & Sidebar text hover effects.<br/><span class="default text-note"><em>Default:</em> <span style="color:#ffffff;background-color:#ddd;padding:2px 3px">#ffffff</span></span></p>
+            <h5>Sidebar Background</h5>
+            <p class="description">Sidebar background & Sidebar trigger button.<br/><span class="default text-note"><em>Default:</em> <span style="color:#bbb;background-color:#3d3d3d;border:1px solid #bbb;padding:2px 3px">#3d3d3d</span></span></p>
+            <h5>Sidebar Secondary Background</h5>
+            <p class="description">Social icons, Tag Cloud tags, Search box & Sidebar buttons.<br/><span class="default text-note"><em>Default:</em> <span style="color:#bbb;background-color:#545454;border:1px solid #bbb;padding:2px 3px">#545454</span></span></p>
+            <br/>
+            <h4 id="selections">Selections<a href="#options" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h4>
+            <h5>Sidebar Link Icon Hover Color</h5>
+            <p class="description">Choose the hover effect background color of Social icons in the sidebar. Each brand's own color or the above set <a class="option-link" href="#theme-color">Theme color</a>.<br/><span class="default text-note"><em>Default:</em> Brand. <em>Options:</em> Brand, Theme.</span></p>
+            <h5>Sidebar Position</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Left. <em>Options:</em> Left, Right.</span></p>
+            <h5>Avatar Shape</h5>
+            <p class="description">Sidebar avatar shape.<br/><span class="default text-note"><em>Default:</em> Square. <em>Options:</em> Square, Rounded square, Circle, Hidden.</span></p>
+            <h5>Avatar Size</h5>
+            <p class="description">Sidebar avatar size. Large size only recommended if uploaded avatar is at least 256x256.<br/><span class="default text-note"><em>Default:</em> Small. <em>Options:</em> Small (128x128), Large.</span></p>
+            <h5>Flickr Feed Order</h5>
+            <p class="description">Order of Flickr feed photos in Sidebar. Only used if <a class="option-link" href="#flickr-feed">Flickr Feed</a> is enabled.<br/><span class="default text-note"><em>Default:</em> Latest. <em>Options:</em> Latest, Random.</span></p>
+            <br/>
+            <h4 id="toggles">Toggles<a href="#options" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h4>
+            <h5 id="infinite-scroll">Infinite Scroll</h5>
+            <p class="description">Load posts automatically as you scroll down the page.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Post Bottom Borders</h5>
+            <p class="description">Place a border below each post. Not recommended if <a class="option-link" href="#post-gutter">Post Gutter</a> is set to 0.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5>Only Show Portraits In Notes</h5>
+            <p class="description">Hide details and only show a portrait for every post note.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Enable Swipe To Open Sidebar</h5>
+            <p class="description">Allows you to swipe left and right to interact with the sidebar on touch screen devices.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5>Keep Sidebar Open In Wide Browsers</h5>
+            <p class="description">Force the sidebar to stay opened if the browser window width is wider than the <a class="option-link" href="#content-width">Max Content Width</a> plus the <a class="option-link" href="#sidebar-width">Sidebar Width</a>.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Description In Sidebar</h5>
+            <p class="description">Show blog description below your avatar in the sidebar.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5>Show Media Captions On Index Pages</h5>
+            <p class="description">If you prefer to display Media post captions on Index pages you can enable this. By default it's disabled to offer a more clean design with post icons shown on hover.<br/><strong>Note: Post icons are automatically displayed with each media post on touch screen devices, regardless of captions enabled or not.</strong><br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Disqus On Custom Pages</h5>
+            <p class="description">Disqus comments on custom pages. Only used if a <a class="option-link" href="#disqus-shortname">Disqus Shortname</a> is set.<br/><span class="default text-note"><em>Default:</em> Enable</span></p>
+            <h5>Show Group Author On Posts</h5>
+            <p class="description">On <a href="https://www.tumblr.com/docs/en/blog_management" target="_blank">group blog</a> posts, display a clickable author icon <i class="fa fa-pencil"></i> with a link to the author's blog.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Stuff I Like Menu Link</h5>
+            <p class="description">Adds a link to your Likes page (<em>tumblr.com/liked/by/YourBlogName</em>) in the sidebar menu. Only used if the 'Share posts you like' option is enabled in blog settings.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Archive Menu Link</h5>
+            <p class="description">Adds a link to your Archive page (<em>YourBlogName.tumblr.com/archive</em>) in the sidebar menu.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5>Random Post Menu Link</h5>
+            <p class="description">Adds a link in the sidebar menu to a random post on your blog.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Search Box</h5>
+            <p class="description">Let users search your blog for posts with a Search Box in the sidebar.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5 id="tag-cloud">Tag Cloud</h5>
+            <p class="description">Display up to - by default - 10 tags in a Tag Cloud in the sidebar. Tags are set in theme options. <a class="option-link" href="#cloud-tags">More info</a> below.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5 id="social-icons">Social Icons</h5>
+            <p class="description">Adds social icons to the sidebar. To set up your icons, take a look at the <a class="option-link" href="#social-links">social icon link options</a> below.<br/><span class="default text-note"><em>Default:</em> Enabled</span></p>
+            <h5>Blogs I Follow</h5>
+            <p class="description">Share the blogs you are following with this handy sidebar block. This only works for primary blogs.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Group Members</h5>
+            <p class="description">On <a href="https://www.tumblr.com/docs/en/blog_management" target="_blank">group blogs</a>, display portraits of the members in the sidebar.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Theme Credits</h5>
+            <p class="description">Show a link to my website in the sidebar footer.<br/><strong>Note: Don't worry. This is the <u>only</u> theme credits link provided with the theme, and it is disabled by default.</strong><br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Twitter Feed</h5>
+            <p class="description">Twitter Feed in sidebar. Make sure <a class="option-link" href="#feed-count">Twitter Feed Count</a> is set and your Tumblr blog is <a href="https://www.tumblr.com/docs/en/twitter" target="_blank">connected to Twitter</a> before you enable this, to make it work properly.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Instagram Feed</h5>
+            <p class="description">Instagram Feed in sidebar. Make sure <a class="option-link" href="#instagram-info">Instagram User ID</a>, <a class="option-link" href="#instagram-info">Instagram Access Token</a> and <a class="option-link" href="#feed-count">Instagram Feed Count</a> are set before you enable this, to make it work properly.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5>Dribbble Feed</h5>
+            <p class="description">Dribbble Feed in sidebar. Make sure <a class="option-link" href="#dribbble-username">Dribbble Username</a> and <a class="option-link" href="#feed-count">Dribbble Feed Count</a> are set before you enable this, to make it work properly.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <h5 id="flickr-feed">Flickr Feed</h5>
+            <p class="description">Flickr Feed in sidebar. Make sure <a class="option-link" href="#flickr-info">Flickr User ID</a> and <a class="option-link" href="#feed-count">Flickr Feed Count</a> are set before you enable this, to make it work properly.<br/><span class="default text-note"><em>Default:</em> Disabled</span></p>
+            <br/>
+            <h4 id="text">Text<a href="#options" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h4>
+            <p class="text-note">Note: Widths are set in pixels <strong><u>without</u></strong> units. Make sure you don't add any, or it will cause problems with your theme. Example: '960' automatically becomes '960px'.</p>
+            <h5>Max Columns</h5>
+            <p class="description">Maximum number of columns to display your posts in. With Riptide's <em>responsive and fluid design</em>, the number of columns will decrease as the browser width gets smaller. To control when this will happen, take a look at the <a class="option-link" href="#post-width">Min post width</a> option.<br/><span class="default text-note"><em>Default:</em> 2</span></p>
+            <h5 id="content-width">Max Content Width</h5>
+            <p class="description">The maximum width of your blog content on Index pages. In wider browsers, the content will stay centered in the middle of the window.<br/><span class="default text-note"><em>Default:</em> 960</span></p>
+            <h5 id="post-width">Min Post Width</h5>
+            <p class="description">As the browser window gets smaller, your posts will decrease in width. This will set the <em>minimum width</em> of your posts before the number of columns will be reduced, to make room for your posts.<br/><span class="default text-note"><em>Default:</em> 300</span></p>
+            <h5>Max Permalink Page Width</h5>
+            <p class="description">Maximum width of your content on Permalink (post) pages.<br/><span class="default text-note"><em>Default:</em> 530</span></p>
+            <h5 id="post-gutter">Post Gutter</h5>
+            <p class="description">Post gutter (margin) between your posts on Index pages. '15' will result in a margin of 30px between every post.<br/><span class="default text-note"><em>Default:</em> 15</span></p>
+            <h5>Photoset Gutter</h5>
+            <p class="description">Photoset gutter (margin) between photos in a Photoset.<br/><span class="default text-note"><em>Default:</em> 0</span></p>
+            <h5 id="sidebar-width">Sidebar Width</h5>
+            <p class="description">The width of the sidebar. If the browser width is smaller than 80% of the sidebar width, the sidebar will <em>automatically become fluid</em>, to prevent it from getting hidden outside the window.<br/><span class="default text-note"><em>Default:</em> 290</span></p>
+            <h5>Sidebar Title</h5>
+            <p class="description">Sidebar title below your avatar in the sidebar.<br/><span class="default text-note"><em>Default:</em> </span></p>
+            <h5>Menu Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Menu</span></p>
+            <h5>Search Box Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> </span></p>
+            <h5>Tag Cloud Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Tag Cloud</span></p>
+            <h5>Social Icons Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Follow Me</span></p>
+            <h5>Blogs I Follow Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Blogs I Follow</span></p>
+            <h5>Group Members Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Blog Authors</span></p>
+            <h5>Twitter Feed Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Tweets</span></p>
+            <h5>Instagram Feed Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Instagram Photos</span></p>
+            <h5>Dribbble Feed Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Dribbble Shots</span></p>
+            <h5>Flickr Feed Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> Flickr Photos</span></p>
+            <h5>Sidebar Footer Title</h5>
+            <p class="description"><span class="text-note"><em>Default:</em> </span></p>
+            <h5>Sidebar Footer Content</h5>
+            <p class="description">Here you can add your own text to display at the bottom of the sidebar. Oh, and the best part: <strong>HTML tags are supported</strong>!</p>
+            <h5 id="cloud-tags">Tag Cloud Tag 1-10</h5>
+            <p class="description">Tags to display in the <a class="option-link" href="#tag-cloud">Tag Cloud</a>. If you only want a few tags (or none), leave the options empty, and they will not be visible.</p>
+            <h5 id="disqus-shortname">Disqus Shortname</h5>
+            <p class="description">Your Disqus shortname. Comments will automatically be enabled when entered. If you don't want Disqus on your blog, simply leave this option empty.<br/><span class="default text-note">If you don't know how to find your Disqus Shortname, <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-" target="_blank">click here</a>.</span></p>
+            <h5>Google Analytics ID</h5>
+            <p class="description">Your Google Analytics ID. Like Disqus, Analytics will automatically be enabled as you enter your ID, or disabled if empty.<br/><span class="default text-note">If you don't know how to find your Google Analytics ID, <a href="https://support.google.com/analytics/answer/1032385?hl=en-GB" target="_blank">click here</a>.</span></p>
+            <h5 id="instagram-info">Instagram User ID & Access Token</h5>
+            <p class="description">Required to set up your Instagram Feed.<br/><span class="default text-note">If you don't know how to find your User ID or Access Token, take a look at the <a class="option-link" href="#feeds">tutorials</a> below.</span></p>
+            <h5 id="dribbble-username">Dribbble Username</h5>
+            <p class="description">Required to set up your Dribbble Feed.</p>
+            <h5 id="flickr-info">Flickr User ID</h5>
+            <p class="description">Required to set up your Flickr Feed.<br/><span class="default text-note">If you don't know how to find your User ID, take a look at the <a class="option-link" href="#feeds">tutorials</a> below.</span></p>
+            <h5 id="feed-count">Twitter, Instagram, Dribbble & Flickr Feed Count</h5>
+            <p class="description">The number of tweets/photos displayed in the sidebar social feeds.<br/><span class="text-note"><em>Default:</em> Twitter: 3 - Instagram, Dribbble & Flickr: 6</span></p>
+            <h5 id="social-links">Social Icon Links</h5>
+            <p class="description">When a link to your preferred website is provided, the icon will automatically be added to the sidebar, as long as <a class="option-link" href="#social-icons">Social Icons</a> is enabled.
+            <span class="default"><i class="fa fa-behance social-icon"></i>
+            <i class="fa fa-codepen social-icon"></i>
+            <i class="fa fa-delicious social-icon"></i>
+            <i class="fa fa-deviantart social-icon"></i>
+            <i class="fa fa-digg social-icon"></i>
+            <i class="fa fa-dribbble social-icon"></i>
+            <i class="fa fa-dropbox social-icon"></i>
+            <i class="fa fa-drupal social-icon"></i>
+            <i class="fa fa-facebook social-icon"></i>
+            <i class="fa fa-flickr social-icon"></i>
+            <i class="fa fa-foursquare social-icon"></i>
+            <i class="fa fa-github social-icon"></i>
+            <i class="fa fa-google-plus social-icon"></i>
+            <i class="fa fa-instagram social-icon"></i>
+            <i class="fa fa-joomla social-icon"></i>
+            <i class="fa fa-jsfiddle social-icon"></i>
+            <i class="fa fa-lastfm social-icon"></i>
+            <i class="fa fa-linkedin social-icon"></i>
+            <i class="fa fa-paypal social-icon"></i>
+            <i class="fa fa-pinterest social-icon"></i>
+            <i class="fa fa-reddit social-icon"></i>
+            <i class="fa fa-skype social-icon"></i>
+            <i class="fa fa-soundcloud social-icon"></i>
+            <i class="fa fa-spotify social-icon"></i>
+            <i class="fa fa-stack-exchange social-icon"></i>
+            <i class="fa fa-stack-overflow social-icon"></i>
+            <i class="fa fa-steam social-icon"></i>
+            <i class="fa fa-stumbleupon social-icon"></i>
+            <i class="fa fa-tumblr social-icon"></i>
+            <i class="fa fa-twitch social-icon"></i>
+            <i class="fa fa-twitter social-icon"></i>
+            <i class="fa fa-vimeo-square social-icon"></i>
+            <i class="fa fa-vine social-icon"></i>
+            <i class="fa fa-weibo social-icon"></i>
+            <i class="fa fa-wordpress social-icon"></i>
+            <i class="fa fa-xing social-icon"></i>
+            <i class="fa fa-yahoo social-icon"></i>
+            <i class="fa fa-youtube social-icon"></i></span>
+            <br/><strong>Note: Missing an icon? <a href="http://riptidetheme.tumblr.com/support">Send me a message</a> and I'll be happy to help you set it up!</strong>
+            </p>
+            <h5>Website Link</h5>
+            <p class="description">Add a custom link <i class="fa fa-globe social-icon"></i> to your or anyone else's website with this option. Make sure <a class="option-link" href="#social-icons">Social Icons</a> is enabled.</p>
+            <h5>Email Address</h5>
+            <p class="description">Add your email address <i class="fa fa-paper-plane social-icon"></i> to the sidebar. When clicked the user will be directed to their default mail program, ready to send you an email. Make sure <a class="option-link" href="#social-icons">Social Icons</a> is enabled.</p>
+        </div>
+        <div class="part">
+            <h3 id="feeds">Setting up Social Feeds<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>Social Feeds can be tricky to set up on your own, but here are some tutorials to guide you on the way.<br/><span class="text-note">If you still are having problems, <a href="http://riptidetheme.tumblr.com/support">you know what to do</a>!</span></p>
+            <h4>Twitter</h4>
+            <p>There's already a great tutorial by the Tumblr Team themselves on how to connect your blog to Twitter, so there's no need for me to explain.<br/><br/><a href="https://www.tumblr.com/docs/en/twitter" target="_blank">Connecting your Tumblr to Twitter</a></p>
+            <h4>Instagram</h4>
+            <p>To set up your Instagram Feed, you need two things. A User ID, and an Access Token. Head to <a href="http://projects.craftedpixelz.co.uk/jqinstapics/#feedback" target="_blank">jQinstapics</a>, click the '<strong>Retrieve my details bro!</strong>' button, authorize with Instagram <span class="text-note">(don't worry, you can trust this website)</span>, and your details will magically appear!</p>
+            <h4>Dribbble</h4>
+            <p>Luckily, not all feeds are tricky to set up. Simply put your Dribbble Username in the theme option, and you're good to go!</p>
+            <h4>Flickr</h4>
+            <p>Setting up your Flickr feed is almost as easy as with Dribbble. All you need is your Flickr Username. Head to <a href="http://idgettr.com/" target="_blank">idGettr</a>, follow the easy instruction, and there you go!</p>
+        </div>
+        <div class="part">
+            <h3 id="tldr">TLDR<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>Responsive Design, All Post Types, 100+ Theme Options, Retina Ready, Custom Sidebar, 40+ Social Feeds, Social Icons, Disqus, Google Analytics, Group Blogs, Day & Tag Pages, Like & Reblog Buttons, Tags, Lightbox, High-res Photos</p>
+        </div>
+        <div class="part">
+            <h3 id="change-log">Change Log<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <h5 title="26 Sep, 2014">Riptide 1.0</h5>
+            <p class="text-note">It's alive!</p>
+        </div>
+        <div class="part bottom">
+            <h3 id="credits">Credits<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>Finally, I want to thank everyone who - with their projects - helped me develop Riptide. I would not have made it without you.</p>
+            <p class="half left">
+                <a href="http://jquery.com/" target="_blank">jQuery</a><br/>
+                <a href="http://modernizr.com/" target="_blank">Modernizr</a><br/>
+                <a href="https://github.com/PixelUnion/Extended-Tumblr-Photoset" target="_blank">PXU Photoset</a><br/>
+                <a href="http://fancybox.net/" target="_blank">Fancybox</a><br/>
+                <a href="http://masonry.desandro.com/" target="_blank">Masonry</a><br/>
+                <a href="http://projects.craftedpixelz.co.uk/jqinstapics/" target="_blank">jQInstaPics</a><br/>
+                <a href="http://lab.tylergaw.com/jribbble/" target="_blank">Jribbble</a>
+            <p class="half right">
+                <a href="http://labs.rampinteractive.co.uk/touchSwipe/demos/" target="_blank">TouchSwipe</a><br/>
+                <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a><br/>
+                <a href="http://iamceege.github.io/tooltipster/" target="_blank">Tooltipster</a><br/>
+                <a href="https://github.com/paulirish/infinite-scroll" target="_blank">Infinite Scroll</a><br/>
+                <a href="http://imagesloaded.desandro.com/" target="_blank">ImagesLoaded</a><br/>
+                <a href="http://fitvidsjs.com/" target="_blank">FitVids.js <span class="text-note">*</span></a><br/>
+                <span class="text-note">*Customized version.</span></p>
+            </p>
+
+        </div>
+        <div class="part">
+            <h3 id="last-words">A Few Last Words<a href="#contents" class="up-top fa fa-angle-up" title="Back to Documentation Contents"></a></h3>
+            <p>If you have made it this far, <span id="cookie" title="Cookify this documentation!">have a cookie</span>!</p>
+            <div class="cookie-box"><img id="yum" src="http://static.tumblr.com/j5v8xe6/az5ncek92/cookies.jpg"></div>
+            <p>I want to <strong>Thank you</strong> for the support you're giving me in purchasing my theme. It means a lot to me that the time I've spent making this is worth your money.</p>
+            <p class="text-note">Fun fact: About 350 cups of tea were consumed during the making of this Tumblr theme.</p>
+            <p>This is my first of <em>hopefully</em> many Tumblr themes to come. If you want to stay updated with my work & life, you can follow me on <a href="http://twitter.com/alexandberg">Twitter</a> or visit my <a href="https://alexandersandberg.com">website</a>.</p>
+            <p class="text-note">Thank you again. Alex out.</p>
+        </div>
+        <p class="classy">Stay classy my friend.</p>
+    </div>
+    <script src="http://static.tumblr.com/j5v8xe6/JYZna9o3a/jquery-2.1.1.min.js"></script>
+    <script>
+    $(window).load(function(){
+        var counter = 0;
+        $('body').on('click', '#cookie', function(){
+            switch(counter){
+                case 0: $(".cookie-box").show();
+                        $(this).parent().html("<span id='cookie'>You're welcome!</span>");
+                        counter++;
+                        break;
+                case 1: $(this).text("Sorry, that was all I had.");
+                        $(this).css("cursor", "auto");
+                        break;
+            }
+        });
+        $(".options h5").each(function(){
+            $(this).next(".description").prev().addClass("active");
+        });
+        $(".description").hide();
+        $(".options h5").click(function(){
+            if(!$(this).hasClass("open")){
+                $(".open").each(function(){
+                    $(this).next(".description").stop().slideToggle(100);
+                    $(this).toggleClass("open");
+                });
+            }
+            $(this).toggleClass("open");
+            $(this).next(".description").stop().slideToggle(100);
+        });
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+        $(window).scroll(function() {
+            if($(window).scrollTop() + $(window).height() >= getDocHeight()) {
+                $(".classy").css("opacity", 1);
+            }else{
+                $(".classy").css("opacity", 0);
+            }
+        });
+    });
+    </script>
+</body>
+</html>
